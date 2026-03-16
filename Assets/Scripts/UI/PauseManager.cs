@@ -44,11 +44,11 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        /*if (Input.GetKeyDown(KeyCode.B))
         {
             if (isPaused) Resume();
             else Pause();
-        }
+        }*/
     }
 
     public void Resume()
