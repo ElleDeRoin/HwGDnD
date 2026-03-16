@@ -13,11 +13,16 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("You Lose!");
 
+            if (Gamepad.current != null)
+                    InputSystem.ResetHaptics();
+
 
             if (sceneLoader != null)
             {
                 
                 sceneLoader.LoadSceneByName("NewLoseScene");
+
+                
             }
         }
     }
