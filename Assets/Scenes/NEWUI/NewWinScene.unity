@@ -421,6 +421,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6128410831859336140, guid: e5c8a01b5de6cf04c99fff79fd72e6b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1764828115}
+    - targetCorrespondingSourceObject: {fileID: 6276572619606058230, guid: e5c8a01b5de6cf04c99fff79fd72e6b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1764828117}
   m_SourcePrefab: {fileID: 100100000, guid: e5c8a01b5de6cf04c99fff79fd72e6b4, type: 3}
 --- !u!1 &1764828114 stripped
 GameObject:
@@ -439,6 +442,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c73b57fb36764a9f13a1b39d69c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseScreenCursor
+--- !u!1 &1764828116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6276572619606058230, guid: e5c8a01b5de6cf04c99fff79fd72e6b4, type: 3}
+  m_PrefabInstance: {fileID: 1764828113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1764828117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764828116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e9f422b8c9854468671df61b333203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitGame
+  quitAction: {fileID: 7476244043514120974, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
