@@ -250,10 +250,17 @@ public class PlayerControlScript : MonoBehaviour
     {
         if (context.performed)
         {
+            //Application.Quit();
             Debug.Log("Quit game");
-            Application.Quit();
         }
+
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
+    
 
     public void OnPause(InputAction.CallbackContext context)
     {
