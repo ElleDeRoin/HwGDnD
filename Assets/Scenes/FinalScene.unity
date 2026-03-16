@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc28c58ed014a094fa244810cce01afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 1664621794}
   taskManager: {fileID: 631334975}
 --- !u!114 &4698976
 MonoBehaviour:
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   roamRadius: 7
   roamWaitTime: 0.2
   screenEffect: {fileID: 822845670}
-  loseManager: {fileID: 0}
+  loseManager: {fileID: 1532659137}
 --- !u!114 &930543689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6752591dfaa2aa44af53b0652279400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 1664621794}
 --- !u!136 &930543690
 CapsuleCollider:
   m_ObjectHideFlags: 0

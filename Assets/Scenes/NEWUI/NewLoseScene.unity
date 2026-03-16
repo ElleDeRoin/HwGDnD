@@ -259,9 +259,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1557969224833660588, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: FinalLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 5922974382373858562, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
       propertyPath: m_Name
       value: LoseUIroot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678643580519524599, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: NewMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
