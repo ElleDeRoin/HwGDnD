@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "DeltaNoDeadlineHWG.slnx"
+    "dotnet.defaultSolution": "HwGDnD.slnx"
 }
