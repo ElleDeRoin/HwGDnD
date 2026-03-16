@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1557969224833660588, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: FinalLevel
+      value: FinalScene
       objectReference: {fileID: 0}
     - target: {fileID: 5922974382373858562, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
       propertyPath: m_Name
@@ -274,8 +274,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4866320469645534393, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1117777926}
   m_SourcePrefab: {fileID: 100100000, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
+--- !u!1 &1117777925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4866320469645534393, guid: 2d4a30d84d77c124281f10148eed3bd0, type: 3}
+  m_PrefabInstance: {fileID: 1117777924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1117777926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117777925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4c73b57fb36764a9f13a1b39d69c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoseScreenCursor
 --- !u!1 &2028700036
 GameObject:
   m_ObjectHideFlags: 0
