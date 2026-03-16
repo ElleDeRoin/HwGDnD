@@ -1,51 +1,94 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
-    private bool isPaused = false;
+    public GameObject pauseMenu;
+    public Button resumeButton;
+    public Button mainMenuButton;
+    public MonoBehaviour lookScript;
+    public static bool isPaused = false;
 
-    /*void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        lookScript.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isPaused = false;
+
+        if (resumeButton != null)
         {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
+            resumeButton.onClick.RemoveAllListeners();
+            resumeButton.onClick.AddListener(Resume);
         }
-    }*/
 
-    public void OnPrevious(InputAction.CallbackContext context)
-    {
-        //Button pressed
-        if (context.performed)
+        if (mainMenuButton != null)
         {
-            Debug.Log("Interaction triggered");
-            if (!isPaused)
-                Pause();
+            mainMenuButton.onClick.RemoveAllListeners();
+            mainMenuButton.onClick.AddListener(() => GoToMainMenu("MainMenu"));
         }
     }
 
-    void Pause()
+    private void OnEnable()
     {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (isPaused) Resume();
+            else Pause();
+        }
     }
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        lookScript.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         isPaused = false;
     }
 
-    public void LoadMainMenu()
+    private void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        lookScript.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        isPaused = true;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        pauseMenu.SetActive(false);
+        lookScript.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isPaused = false;
+    }
+
+    public void GoToMainMenu(string sceneName)
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        lookScript.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isPaused = false;
+        SceneManager.LoadScene(sceneName);
     }
 }
