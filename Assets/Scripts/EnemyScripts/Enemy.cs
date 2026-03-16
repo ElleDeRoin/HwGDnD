@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
             if (sceneLoader != null)
             {
                 
-                sceneLoader.LoadSceneByName("LoseScreen");
+                sceneLoader.LoadSceneByName("NewLoseScene");
             }
         }
     }

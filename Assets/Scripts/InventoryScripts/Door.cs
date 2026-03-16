@@ -57,7 +57,7 @@ public class Door : MonoBehaviour
             Debug.Log("You Win!");
             if (sceneLoader != null)
             {
-                sceneLoader.LoadSceneByName("WinScreen");
+                sceneLoader.LoadSceneByName("NewWinScene");
             }
         }
     }

@@ -1,33 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Haptics;
 
 public class LoseManager : MonoBehaviour
 {
-    public GameObject loseUI;
     public bool lost = false;
 
     public void ShowLoseScreen()
     {
         lost = true;
-        loseUI.SetActive(true);
+        
+        // Reset haptics if a gamepad is connected
         if (Gamepad.current != null)
             InputSystem.ResetHaptics();
+        
+        // Pause the game
         Time.timeScale = 0f;
+
+        // Load the separate lose scene
+        SceneManager.LoadScene("NewLoseScene");
     }
 
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        if (Gamepad.current != null)
-            InputSystem.ResetHaptics();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void LoadMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
-    }
 }
