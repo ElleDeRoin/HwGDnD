@@ -27,11 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/OldScenes/WinScreen.unity
     guid: 336a666ce9daece4f8b8fd0eb0256780
   - enabled: 1
-    path: Assets/Scenes/FinalScene.unity
-    guid: 395866ffc97da1346bf77e11b145903c
-  - enabled: 1
     path: Assets/Scenes/NEWUI/NewMainMenu.unity
     guid: e8d7c6d4f74d81648b473989313de11e
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 395866ffc97da1346bf77e11b145903c
   - enabled: 1
     path: Assets/Scenes/NEWUI/NewLoseScene.unity
     guid: 537a9412b2212274e8f3557ac5ff68c6

@@ -43,6 +43,8 @@ public class PlayerControlScript : MonoBehaviour
 
     public bool actionAvailable = false;
 
+    public PauseManager pauseManager;
+
     //Tracks if the player is currently performing an interaction
     void Start()
     {
@@ -78,6 +80,19 @@ public class PlayerControlScript : MonoBehaviour
         {
             interactAction.performed += OnInteract;
             interactAction.canceled += OnInteract;
+        }
+
+        InputAction exitAction = playerActionMap.FindAction("Exit");
+        if (exitAction != null)
+        {
+            exitAction.performed += OnExit;
+        }
+
+        InputAction pauseAction = playerActionMap.FindAction("Pause");
+        if (pauseAction != null)
+        {
+            pauseAction.performed += OnPause;
+            pauseAction.canceled += OnPause;
         }
 
         // If camera not assigned, try to find it
@@ -116,6 +131,19 @@ public class PlayerControlScript : MonoBehaviour
             {
                 interactAction.performed -= OnInteract;
                 interactAction.canceled -= OnInteract;
+            }
+
+            InputAction exitAction = playerActionMap.FindAction("Exit");
+            if (exitAction != null)
+            {
+                exitAction.performed -= OnExit;
+            }
+
+            InputAction pauseAction = playerActionMap.FindAction("Pause");
+            if (pauseAction != null)
+            {
+                pauseAction.performed -= OnPause;
+                pauseAction.canceled -= OnPause;
             }
         }
     }
@@ -215,6 +243,32 @@ public class PlayerControlScript : MonoBehaviour
         {
             isCrouching = !isCrouching;
             Debug.Log(isCrouching ? "Crouch started" : "Crouch ended");
+        }
+    }
+
+    public void OnExit(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Quit game");
+            Application.Quit();
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (PauseManager.isPaused)
+            {
+                pauseManager.Resume();
+                Debug.Log("Game has been resumed");
+            }
+            else
+            {
+                pauseManager.Pause();
+                Debug.Log("Game has been paused");
+            }
         }
     }
 
